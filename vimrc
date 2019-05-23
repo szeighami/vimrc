@@ -33,6 +33,9 @@ function EndSaveSession()
   :xa 
 endfunction
 
-command QS call EndSaveSession()
+command Q call EndSaveSession()
 
 set noea
+
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
