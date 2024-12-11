@@ -28,13 +28,6 @@ xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 
 
-function EndSaveSession()
-  :mksession! prev
-  :xa 
-endfunction
-
-command Q call EndSaveSession()
-
 set noea
 
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
